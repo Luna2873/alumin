@@ -1,0 +1,9 @@
+		<div id="footer">
+            <div class="wrap">
+				Copyright&#169 2015
+			</div>
+		</div>
+		<script src="https://www.google.com/jsapi" type="text/javascript" ></script>
+		<script src="js/google-loads.js" type="text/javascript" ></script>
+		<script src="js/jquery.cycle.all.min.js" type="text/javascript" ></script>
+		<script src="https://alumni.brandeis.edu/design/js/slideshow-setup.js" type="text/javascript" ></script>
