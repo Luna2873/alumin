@@ -12,8 +12,9 @@
 						<img src="img/logo.png">
                     </div>
 					<div class="header-text">
-						<font id="top" size="6">DUEDAA, NORTH AMERICA text1 </font>
-						text2
+						<font id="top" size="6">DUEDAA, NORTH AMERICA</font>
+						Dhaka University Department of Economics<br/>
+                                Alumni Association, North America
 					</div>
                 </div>
 			</div>
@@ -26,13 +27,13 @@
 						<a href="events.php">Events</a>
 					</li>
 					<li>
-						<a href="jobs.php">Alumni<br>Jobs</a>
+						<a href="jobs.php">Alumni Jobs</a>
 					</li>
 					<li>
-						<a href="alumni.php">Meet an<br>Alumni</a>
+						<a href="alumni.php">Meet an Alumni</a>
 					</li>
 					<li>
-						<a href="contact-us.php">Contact<br>Us</a>
+						<a href="contact-us.php">Contact Us</a>
 					</li>
 				</ul>
 			</div>
