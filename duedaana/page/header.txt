@@ -23,7 +23,7 @@
 						<a href="about-us.php">About Us</a>
 					</li>
 					<li>
-						<a href="events.php">New<br>Events</a>
+						<a href="events.php">Events</a>
 					</li>
 					<li>
 						<a href="jobs.php">Alumni<br>Jobs</a>
