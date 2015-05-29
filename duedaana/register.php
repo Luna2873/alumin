@@ -86,6 +86,11 @@ $account = new Account($_GET, $_POST);
                                         <i>Please ignore session jams</i>
                                     </li>
                                 </ul>
+                                <ul class="horizontal-list">
+                                    <li>
+                                        <input type="button" name="submit" value="Submit">
+                                    </li>
+                                </ul>
                             </div>
 							<?php else: ?>
 							You are already registered. Please login.
