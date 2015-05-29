@@ -175,3 +175,18 @@ a {
 	float: left;
 	margin-right: 20px;
 }
+ul.horizontal-list{
+   // margin-top: 10px
+}
+ul.horizontal-list li{
+	display:inline-block;
+	margin:0 10px;
+	vertical-align: text-top;
+}
+ul.horizontal-list li input, ul.horizontal-list li select{
+    margin: 5px 0;
+}
+ul.horizontal-list li i{
+	font-size: 90%;
+    color: #999;
+}
