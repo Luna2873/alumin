@@ -28,18 +28,28 @@ $account = new Account($_GET, $_POST);
 				<div class="content">
 					<div class="slideshow">
 						<div class="cycle">
-							<div class="slide" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1; width: 690px; height: 302px;">
+							<div class="slide">
 								<a href="#any url can go here">
 									<img alt="" src="http://www.athleat.co.uk/user/Grass_back.jpg">
 								</a>
 							</div>
-							<div class="slide" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1; width: 690px; height: 302px;">
+							<div class="slide">
 								<a href="#any url can go here">
 									<img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2WvmIwTamGFIg4O4dYKVePoBkujRdfzKLTCX6OJc67HLr2z5t">
 								</a>
 							</div>
+							<div class="slide">
+								<a href="#any url can go here">
+									<img alt="" src="http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg">
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#any url can go here">
+									<img alt="" src="http://chakracenter.files.wordpress.com/2013/02/nature1.jpg">
+								</a>
+							</div>
 						</div>
-						<div class="slideshow-controls"><a href="#" class=""> </a><a href="#" class=""> </a><a href="#" class="activeSlide"> </a></div>
+						<div class="slideshow-controls"><a href="#" class="">&bull;</a><a href="#" class="">&bull;</a><a href="#" class="activeSlide"></a></div>
 					</div>
 				</div>
 			</div>
