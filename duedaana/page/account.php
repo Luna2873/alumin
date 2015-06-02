@@ -164,8 +164,9 @@ class Account {
 	
 	public function createDatabase() {
 		// Change database configuration.
-		$this->mysql = new Database("localhost", "iamdbadmin", "gr8admin29", "duedaana_database1");
+		//$this->mysql = new Database("localhost", "iamdbadmin", "gr8admin29", "duedaana_database1");
 		//							Host	Username	Password	Database
+		$this->mysql = new Database("localhost", "root", "123456", "duedaana_database1");
 		// MySQL table data is in database.sql
 	}
 
@@ -194,13 +195,23 @@ class Account {
 		}
 		if($this->doCheck())
 			return "<h2>Account</h2>You are currently logged in. You can <a href='?action=logout'>logout</a> here!";
-		return "<h2>Login</h2>
+		return "
+		<h2>Login</h2>
+		Every wonder whaterver happended to your friends that you went to university with?</p>
+		you can get connected with some of them here. Log in and you can search for your batch mates.</p>
 		<form action='?action=login' method='post'>
 		Username: <input name='username' type='text' style='width: 99%;''><br>
+		<i class='tip'>Your email is your username</i>
+		<p/>
 		Password: <input name='password' type='text' style='width: 99%;'><br>
 		<input type='submit' style='margin-top: 10px;' value='Go'>
 		$error
-		</form>";
+		</form>
+		<div class='center with-underline'>
+			<a href='reset.php'>Forgot password?</a><br/>
+			<a href='register.php'>Not registered?</a>
+		</div>
+		";
 	}
 
 }

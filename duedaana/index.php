@@ -17,13 +17,6 @@ $account = new Account($_GET, $_POST);
 					<div class="coming-up panel">
 						<?php echo $account->getSide(); ?>
 					</div>
-					<div class="coming-up panel">
-						<h2>Search</h2>
-						<form method="get" action="search.php">
-							<input type="text" size="18" name="search">
-							<input type="submit" value="Search">
-						</form>
-					</div>
 				</div>
 				<div class="content">
 					<div class="slideshow">
@@ -49,7 +42,13 @@ $account = new Account($_GET, $_POST);
 								</a>
 							</div>
 						</div>
-						<div class="slideshow-controls"><a href="#" class="">&bull;</a><a href="#" class="">&bull;</a><a href="#" class="activeSlide"></a></div>
+						<div class="slideshow-controls"><a href="#" class="activeSlide">1</a></div>
+					</div>
+					<div>
+						<p>Our years spent studying at Economics department of university of Dhaka, has been the happiest for a lot of us. 
+							Through classes, exams, halls, on campus activities, life changing experiences and all, we built some time tested friendships. 
+							Post-graduation, we dispersed in various personal pursuit. 
+							Many are in North America. DUEDAA, North America offers all of them a unique opportunity to re-connect with each other and the department.</p>
 					</div>
 				</div>
 			</div>
