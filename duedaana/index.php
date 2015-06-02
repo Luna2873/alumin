@@ -42,7 +42,7 @@ $account = new Account($_GET, $_POST);
 								</a>
 							</div>
 						</div>
-						<div class="slideshow-controls"><a href="#" class="activeSlide">1</a></div>
+						<div class="slideshow-controls"><a href="#" class="activeSlide"></a></div>
 					</div>
 					<div>
 						<p>Our years spent studying at Economics department of university of Dhaka, has been the happiest for a lot of us. 

@@ -1,6 +1,6 @@
 		<div id="footer">
-            <div class="wrap">
-				Copyright &#169 <?php echo '2015 - ' . date('Y');?>
+            <div class="wrap center">
+				Copyright &#169 <?php echo date('Y');?>, DUEDAA
 			</div>
 		</div>
 		<script src="https://www.google.com/jsapi" type="text/javascript" ></script>

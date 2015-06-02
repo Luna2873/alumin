@@ -158,14 +158,15 @@ a {
 #footer {
 	background: #dcdcdc;
 	border-top: 2px solid #002150;
-	min-width: 980px;
+	min-width: 100%;
 	font-size: 12px;
+    line-height: 30px;
 	overflow: hidden;
 	color: #505050
 }
 #footer .wrap {
-	padding: 39px 12px 20px 48px;
-	width: 980px;
+	padding: 20px 12px 20px 48px;
+	width: 100%;
 	margin: 0 auto;
 	overflow: hidden
 }
