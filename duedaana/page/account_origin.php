@@ -90,47 +90,44 @@ class Account {
 	}
 	
 	public function register() {
-		//if(!isset($this->post['username']) || trim($this->post['username']) == "")
-		//	$this->error("You must fill in the required username field to register.", "register");
-		//elseif(!isset($this->post['password']) || trim($this->post['password']) == "")
-		//	$this->error("You haven't filled the password field, you cannot register!", "register");
-		//else
-			if(!isset($this->post['first']) || trim($this->post['first']) == "")
-			$this->error("You haven't filled your first name, you cannot register!", "registerA");
+		if(!isset($this->post['username']) || trim($this->post['username']) == "")
+			$this->error("You must fill in the required username field to register.", "register");
+		elseif(!isset($this->post['password']) || trim($this->post['password']) == "")
+			$this->error("You haven't filled the password field, you cannot register!", "register");
+		elseif(!isset($this->post['first']) || trim($this->post['first']) == "")
+			$this->error("You haven't filled your first name, you cannot register!", "register");
 		elseif(!isset($this->post['last']) || trim($this->post['last']) == "")
-			$this->error("You haven't filled your last name, you cannot register!", "registerB");
+			$this->error("You haven't filled your last name, you cannot register!", "register");
 		elseif(!isset($this->post['graduation']) || trim($this->post['graduation']) == "")
-			$this->error("You haven't filled in your class of graduation, you cannot register!", "registerC");
+			$this->error("You haven't filled in your class of graduation, you cannot register!", "register");
 		elseif(!isset($this->post['email']) || trim($this->post['email']) == "" || !$this->isValidEmail($this->post['email']))
-			$this->error("You haven't filled in your email correctly, you cannot register!", "registerD");
-		//elseif(!isset($this->post['city']) || trim($this->post['city']) == "")
-			//$this->error("You can't be in blank!", "register");
+			$this->error("You haven't filled in your email correctly, you cannot register!", "register");
+		elseif(!isset($this->post['city']) || trim($this->post['city']) == "")
+			$this->error("You can't be in blank!", "register");
 		elseif(!isset($this->post['stateorprovince']) || trim($this->post['stateorprovince']) == "")
-			$this->error("You must fill state or province correctly.", "registerE");
+			$this->error("You must fill state or province correctly.", "register");
 		else {
-			$lname = $this->mysql->escape(trim($this->post['last']));
-			$fname = $this->mysql->escape(trim($this->post['first']));
-			$mname = $this->mysql->escape(trim($this->post['middle']));
-			//$username = $this->mysql->escape($this->post['username']);
-			//$password = password_hash($this->mysql->escape($this->post['password']), PASSWORD_DEFAULT);
+			$name = $this->mysql->escape(trim($this->post['first'])." ".trim($this->post['middle'])." ".trim($this->post['last']));
+			$username = $this->mysql->escape($this->post['username']);
+			$password = password_hash($this->mysql->escape($this->post['password']), PASSWORD_DEFAULT);
 			$email = $this->mysql->escape($this->post['email']);
-			//$phone = $this->mysql->escape($this->post['phone']);
+			$phone = $this->mysql->escape($this->post['phone']);
 			$graduation = $this->mysql->escape($this->post['graduation']);
-			//$resident = $this->mysql->escape($this->post['resident']);
-			//$city = $this->mysql->escape($this->post['city']);
+			$resident = $this->mysql->escape($this->post['resident']);
+			$city = $this->mysql->escape($this->post['city']);
 			$sop = $this->mysql->escape($this->post['stateorprovince']);
-			$createdtime = time(); 
-			
-			$query = $this->mysql->query("SELECT * FROM accounts WHERE email='$email' LIMIT 1");
+			$query = $this->mysql->query("SELECT * FROM accounts WHERE username='$username' LIMIT 1");
 			if($this->mysql->num($query) > 0) {
-				//$this->error("You have already registered!", "registerF");
-				$message = "You have already registered, please login!";
-				echo "<script> alert('$message');parent.location.href='./index.php'; </script>"; 
+				$this->error("That username is taken.", "register");
 				return false;
 			}
-			$this->mysql->query("INSERT INTO accounts (lname, fname, mname, email, classof, residentof, session_id, createdtime) 
-				VALUES ('$lname','$fname','$mname','$email','$graduation','$sop','Has not logged in yet!', '$createdtime')");
-			echo "<script> alert('You have been registered!');parent.location.href='./index.php'; </script>"; 
+			$query2 = $this->mysql->query("SELECT * FROM accounts WHERE email='$email' LIMIT 1");
+			if($this->mysql->num($query2) > 0) {
+				$this->error("You have already registered!", "register");
+				return false;
+			}
+			$this->mysql->query("INSERT INTO `accounts`(`id`, `username`, `password`, `phone`, `name`, `email`, `graduation`, `stateorprovince`, `resident`, `city`, `session_id`) VALUES (NULL,'$username','$password','$phone','$name','$email','$graduation','$sop','$resident','$city','Has not logged in yet!')");
+			$this->error("</font><font color='green'>You have been registered, ".$this->post['first']."!", "register");
 		}
 	}
 	
@@ -169,7 +166,7 @@ class Account {
 		// Change database configuration.
 		//$this->mysql = new Database("localhost", "iamdbadmin", "gr8admin29", "duedaana_database1");
 		//							Host	Username	Password	Database
-		$this->mysql = new Database("localhost", "root", "secret", "duedaana_database1");
+		$this->mysql = new Database("localhost", "root", "123456", "duedaana_database1");
 		// MySQL table data is in database.sql
 	}
 

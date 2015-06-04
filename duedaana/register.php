@@ -13,19 +13,7 @@ $account = new Account($_GET, $_POST);
 		<div id="wrapper">
 			<?php include_once "page/header.txt"; ?>
 			<div id="body">
-				<div class="right-side">
-					<div class="coming-up panel">
-						<?php echo $account->getSide(); ?>
-					</div>
-					<div class="coming-up panel">
-						<h2>Search</h2>
-						<form method="get" action="search.php">
-							<input type="text" size="18" name="search">
-							<input type="submit" value="Search">
-						</form>
-					</div>
-				</div>
-				<div class="content">
+				<div >
 					<div class="panel">
 						<h2>Register</h2>
                         <i>If you have completed at least one semester or equivalent at the department of Economics, you are eligible to register</i>
@@ -54,16 +42,16 @@ $account = new Account($_GET, $_POST);
                                 <ul class="horizontal-list">
                                     <li>
                                         <font color="red">* </font>Last name:<br>
-                                        <input type="text" size="20" name="lastname"><br>
+                                        <input type="text" size="20" name="last"><br>
                                         <i>If you have two last names,<br/> enter it like: Ali-Khan</i>
                                     </li>
                                     <li>
                                         <font color="red">* </font>First name:<br>
-                                        <input type="text" size="20" name="firstname">
+                                        <input type="text" size="20" name="first">
                                     </li>
                                     <li>
                                         Middle name:<br>
-                                        <input type="text" size="20" name="middlename">
+                                        <input type="text" size="20" name="middle">
                                     </li>
                                 </ul>
                                 <ul class="horizontal-list">
@@ -73,7 +61,7 @@ $account = new Account($_GET, $_POST);
                                     </li>
                                     <li>
                                         <font color="red">* </font>Resident of:<br>
-                                        <select onchange="handleStateOrProvince(this.value)" name="resident">
+                                        <select onchange="handleStateOrProvince(this.value)" name="stateorprovince">
                                             <option value="USA">USA</option>
                                             <option value="CANADA">CANADA</option>
                                         </select>
@@ -81,14 +69,14 @@ $account = new Account($_GET, $_POST);
                                 </ul>
                                 <ul class="horizontal-list">
                                     <li>
-                                        <font color="red">* </font>Batch of:<br>
-                                        <input type="text" name="batch"><br/>
+                                        <font color="red">* </font>Class of:<br>
+                                        <input type="text" name="graduation"><br/>
                                         <i>Please ignore session jams</i>
                                     </li>
                                 </ul>
                                 <ul class="horizontal-list">
                                     <li>
-                                        <input type="button" name="submit" value="Submit">
+                                        <input type="submit" name="register" value="Register">
                                     </li>
                                 </ul>
                             </div>
