@@ -157,8 +157,9 @@ class Account {
 				$mail->isHTML(true);                                  // Set email format to HTML
 
 				$mail->Subject = 'Here is the subject';
-				$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-				$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+				$mail->Body    = 'Dear '.$fname.' '.$mname.' '.$lname.",<br/>
+				Thank you for register. Please active your account at <a href='http://localhost:8080/alumin/duedaana/?active.php?account=".$email."' target='_blank'>ref='http://localhost:8080/alumin/duedaana/?active.php?account=".$email."</a>";
+				//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 				if(!$mail->send()) {
 				    echo 'Message could not be sent.';
