@@ -113,7 +113,7 @@ class Account {
 			$mname = $this->mysql->escape(trim($this->post['middle']));
 			//$username = $this->mysql->escape($this->post['username']);
 			//$password = password_hash($this->mysql->escape($this->post['password']), PASSWORD_DEFAULT);
-			$email = $this->mysql->escape($this->post['email']);
+			$email = $this->mysql->escape(trim($this->post['email']));
 			//$phone = $this->mysql->escape($this->post['phone']);
 			$graduation = $this->mysql->escape($this->post['graduation']);
 			//$resident = $this->mysql->escape($this->post['resident']);
@@ -128,9 +128,51 @@ class Account {
 				echo "<script> alert('$message');parent.location.href='./index.php'; </script>"; 
 				return false;
 			}
-			$this->mysql->query("INSERT INTO accounts (lname, fname, mname, email, classof, residentof, session_id, createdtime) 
-				VALUES ('$lname','$fname','$mname','$email','$graduation','$sop','Has not logged in yet!', '$createdtime')");
-			echo "<script> alert('You have been registered!');parent.location.href='./index.php'; </script>"; 
+			//$this->mysql->query("INSERT INTO accounts (lname, fname, mname, email, classof, residentof, session_id, createdtime) 
+			//	VALUES ('$lname','$fname','$mname','$email','$graduation','$sop','Has not logged in yet!', '$createdtime')");
+			//echo "<script> alert('You have been registered!');parent.location.href='./index.php'; </script>"; 
+			$sql = "INSERT INTO accounts (lname, fname, mname, email, classof, residentof, session_id, createdtime) 
+				VALUES ('$lname','$fname','$mname','$email','$graduation','$sop','Has not logged in yet!', '$createdtime')";
+
+			if($this->mysql->query($sql)){
+				require 'PHPMailerAutoload.php';
+
+				$mail = new PHPMailer;
+
+				//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+				$mail->isSMTP();                                      // Set mailer to use SMTP
+				$mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
+				$mail->SMTPAuth = true;                               // Enable SMTP authentication
+				$mail->Username = 'user@example.com';                 // SMTP username
+				$mail->Password = 'secret';                           // SMTP password
+				$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+				$mail->Port = 587;                                    // TCP port to connect to
+
+				$mail->From = 'lisukun@hotmail.com';
+				$mail->FromName = 'Mailer';
+				$mail->addAddress($email);     // Add a recipient
+				$mail->addReplyTo('info@example.com', 'Information');
+
+				$mail->isHTML(true);                                  // Set email format to HTML
+
+				$mail->Subject = 'Here is the subject';
+				$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+				$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+				if(!$mail->send()) {
+				    echo 'Message could not be sent.';
+				    echo 'Mailer Error: ' . $mail->ErrorInfo;
+				} else {
+				    echo 'Message has been sent';
+				}
+			}
+			//
+			//$token = md5($email.$lname.$fname.$createdtime); //创建用于激活识别码
+			//$token_exptime = time()+60*60*24;//过期时间为24小时后
+			//$sql = "insert into `t_user` (`username`,`password`,`email`,`token`,`token_exptime`,`regtime`) values ('$username','$password','$email','$token','$token_exptime','$regtime')";
+			//mysql_query($sql);
+
 		}
 	}
 	
