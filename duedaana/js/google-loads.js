@@ -1,1 +1,1 @@
-google.load("jquery","1");
+google.load("jquery","1.4.2");
