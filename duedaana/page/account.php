@@ -243,7 +243,7 @@ class Account {
 			return "<h2>Account</h2>You are currently logged in. You can <a href='?action=logout'>logout</a> here!";
 		return "
 		<h2>Login</h2>
-		Every wonder whaterver happended to your friends that you went to university with?</p>
+		Ever wonder whaterver happended to your friends that you went to university with?</p>
 		you can get connected with some of them here. Log in and you can search for your batch mates.</p>
 		<form action='?action=login' method='post'>
 		Username: <input name='username' type='text' style='width: 99%;''><br>
