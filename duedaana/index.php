@@ -42,7 +42,7 @@ $account = new Account($_GET, $_POST);
 								</a>
 							</div>
 						</div>
-						<div class="slideshow-controls"><a href="#" class="activeSlide"></a></div>
+						<div><ol class="dot"></ol></div>
 					</div>
 					<div>
 						<p>Our years spent studying at Economics department of university of Dhaka, has been the happiest for a lot of us. 
@@ -54,5 +54,7 @@ $account = new Account($_GET, $_POST);
 			</div>
 		</div>
 		<?php include_once "page/footer.txt"; ?>
+		<script src="js/jquery.cycle.all.min.js" type="text/javascript" ></script>
+		<script src="js/slideshow-setup.js" type="text/javascript" ></script>
 	</body>
 </html>
