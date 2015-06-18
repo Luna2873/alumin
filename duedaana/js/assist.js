@@ -1,12 +1,11 @@
-$(document).ready(function() {
-			$(".fancybox").fancybox({
-				openEffect	: 'none',
-				closeEffect	: 'none'
-			});
-			});
 
-			angular.module('myApp', []).controller('galleryController', function($scope) {
-
+			angular.module('myApp', [])
+			.controller('galleryController', function($scope) {
+                /*$scope.years = [
+                    {batch:"1996"},
+                    {batch:"2005"}
+                    ];
+                */
 			    $scope.images = [
 			        {	
 			        	batch:"1996",
@@ -34,3 +33,34 @@ $(document).ready(function() {
 			        }
 			    ];
 			})
+            .controller('googleController', function($scope){
+                $scope.batchEvents=[
+	                {
+	                	id: 0,
+	                	batch:"1996",
+	                	lat : 34.0500,
+        				long : -118.2500,
+	                	content:"eqeqe"
+	                },
+	                {
+	                	id: 1,
+	                	batch:"2005",
+	                	lat : 41.8819,
+       					long : -87.6278,
+	                	content:"adadadsa"
+	                }
+                ];
+                var i = 0;
+
+                $scope.content = $scope.batchEvents[i].content;
+                var lat = $scope.batchEvents[i].lat;
+                var long = $scope.batchEvents[i].long;
+                var mapOptions = {
+			        zoom: 15,
+			        center: new google.maps.LatLng(lat,long),
+			        mapTypeId: google.maps.MapTypeId.TERRAIN
+			    }
+
+                $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+               
+            })

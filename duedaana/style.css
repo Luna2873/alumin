@@ -211,13 +211,13 @@ div.with-underline a{
 div.center, .dot{
     text-align: center;
 }
-div.dot ol{
+ol.dot ol{
     list-style: none;
     width:100%;
     padding: 0;
     margin: 0px;
 }
-div.dot ol li{
+ol.dot li{
     margin: 0 2px;
     border-radius: 50%;
     border: 1px solid #888;
@@ -227,6 +227,15 @@ div.dot ol li{
     cursor: pointer;
 }
 
-div.dot ol li:hover {background-color: green;}
-div.dot ol li.activeSlide {background-color: grey;}
+ol.dot li:hover {background-color: green;}
+ol.dot li.activeSlide {background-color: grey;}
+
+a.service {font-size: 2.5em; line-height: 0.75em; color:; text-decoration:none; padding-right: 5px;}
+a.service:hover {color: green;}
+
+/*Gallery page*/
+div.fancybox-w{
+    float: left;
+    margin-right: 5px;
+}
 

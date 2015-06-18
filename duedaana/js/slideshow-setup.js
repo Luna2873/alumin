@@ -1,11 +1,12 @@
 $(document).ready(function(){ 
     $('.slideshow .cycle').cycle({
         speed: 'fast',
-        pager: '.slideshow-controls',
+        pager: '.dot',
         timeout:6000,
         pause: true,
         pagerAnchorBuilder: function(index, el) {
-        return '<a href="#">123</a>';
+       // return '<a class="service" href="#" >&bull;</a>';
+       return '<li></li>';
         } 
     });
     /*
